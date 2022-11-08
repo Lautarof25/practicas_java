@@ -288,14 +288,29 @@ public class Main {
         System.out.println("Ingrese la base de la escalera");
         int base = scaner.nextInt();
         String escalera = "";
-        for (int j = 0; j < base; j++){
-            if(j % 2 == 0){
-                escalera+= "1\n";
-            }else {
-                escalera+= "0\n";
-            }
+        for (int j = 0; j < base; j++) {
+            if(j % 2 == 0)
+                escalera += "1 ";
+            else
+                escalera += "0 ";
+            System.out.println(escalera);
         }
-        System.out.println(escalera);
+        System.out.println("Ejercicio 26 ");
+        String password = "abc123";
+        String confirmacion;
+        boolean ok = false;
+        int intentos = 0;
+        do {
+            System.out.println("Ingrese la contraseña");
+            confirmacion = scaner.next();
+            intentos++;
+            if (confirmacion.equals(password))
+                ok = true;
+        }while (!(password.equals(confirmacion)) && intentos < 3);
+        if(ok)
+            System.out.println("Enhorabuena");
+        
+
     }
 
 }
